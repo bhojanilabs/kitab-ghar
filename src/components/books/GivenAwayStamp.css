@@ -1,0 +1,26 @@
+.given-away-stamp {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  background: color-mix(
+    in oklab,
+    var(--color-background) 85%,
+    transparent
+  );
+
+  color: var(--color-primary);
+
+  border: 4px double var(--color-primary);
+
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  transform: rotate(-14deg);
+}

@@ -1,0 +1,1686 @@
+/* =========================================================
+   KITAB GHAR — ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  width: 100%;
+  overflow-x: clip;
+}
+
+.about-page .page {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--page-gutter) * 2))
+  );
+  margin-inline: auto;
+}
+
+.about-label {
+  display: inline-block;
+  max-width: 100%;
+  padding-bottom: 4px;
+
+  color: var(--color-primary);
+  border-bottom: 2px dashed var(--color-primary);
+
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+  min-height: 650px;
+  padding-block:
+    clamp(72px, 6vw, 100px)
+    clamp(82px, 7vw, 112px);
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.08fr)
+    minmax(430px, 0.92fr);
+  align-items: center;
+  gap: clamp(48px, 7vw, 112px);
+}
+
+.about-hero__copy {
+  min-width: 0;
+}
+
+.about-hero h1 {
+  margin: 24px 0 28px;
+
+  font-family: var(--font-display);
+  font-size: clamp(64px, 6.2vw, 112px);
+  font-weight: 800;
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+
+  text-transform: uppercase;
+  overflow-wrap: normal;
+}
+
+.about-hero h1 em {
+  position: relative;
+  z-index: 0;
+
+  display: inline-block;
+
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.about-hero h1 em::after {
+  content: "";
+
+  position: absolute;
+  right: -4px;
+  bottom: 8px;
+  left: -2px;
+  z-index: -1;
+
+  border-bottom: 8px solid var(--color-orange);
+
+  transform: rotate(-2deg);
+}
+
+.about-hero__copy > p {
+  max-width: 620px;
+  margin: 0;
+
+  font-size: clamp(17px, 1.25vw, 20px);
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   HERO — BOOK MOVEMENT ART
+   ========================================================= */
+
+.about-hero__art {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 470px;
+}
+
+.about-move-art {
+  position: relative;
+
+  width: min(100%, 680px);
+  height: 470px;
+  margin-inline: auto;
+}
+
+/* Starting book */
+
+.about-move-art__book {
+  position: absolute;
+  top: 74px;
+  left: 7%;
+  z-index: 3;
+
+  width: 190px;
+  aspect-ratio: 3 / 4;
+  padding: 25px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: var(--color-yellow);
+  color: var(--color-ink);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-ink);
+
+  transform: rotate(-7deg);
+}
+
+.about-move-art__book > span {
+  align-self: flex-start;
+
+  padding: 5px 8px;
+
+  background: var(--color-background);
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 9px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+}
+
+.about-move-art__book strong {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 0.88;
+}
+
+.about-move-art__book small {
+  font-size: 8px;
+  font-weight: 1000;
+  line-height: 1.3;
+  letter-spacing: 0.1em;
+}
+
+/* Route */
+
+.about-move-art__path {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  left: 0;
+
+  width: 100%;
+  height: 360px;
+
+  overflow: visible;
+
+  pointer-events: none;
+}
+
+.about-move-art__route {
+  fill: none;
+
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 11 10;
+}
+
+.about-move-art__arrow {
+  fill: none;
+
+  stroke: var(--color-primary);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-move-art__motion {
+  fill: none;
+
+  stroke: var(--color-orange);
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+/* Destination desk */
+
+.about-move-art__desk {
+  position: absolute;
+  right: 3%;
+  bottom: 58px;
+  z-index: 2;
+
+  width: 245px;
+  height: 180px;
+}
+
+.about-move-art__desk-label {
+  position: absolute;
+  top: -30px;
+  right: 3px;
+  z-index: 4;
+
+  padding: 5px 9px;
+
+  background: var(--color-paper-green);
+  color: var(--color-ink);
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 9px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+
+  transform: rotate(3deg);
+}
+
+.about-move-art__received-book {
+  position: absolute;
+  right: 57px;
+  bottom: 62px;
+  z-index: 3;
+
+  width: 105px;
+  height: 145px;
+
+  display: grid;
+  place-items: center;
+
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+
+  transform: rotate(5deg);
+}
+
+.about-move-art__received-book span {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 0.95;
+
+  text-align: center;
+}
+
+.about-move-art__desk-top {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  left: 0;
+  z-index: 2;
+
+  height: 18px;
+
+  background: var(--color-orange);
+
+  border: 3px solid var(--color-ink);
+}
+
+.about-move-art__desk-leg {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+  width: 13px;
+  height: 58px;
+
+  background: var(--color-background);
+
+  border-right: 3px solid var(--color-ink);
+  border-bottom: 3px solid var(--color-ink);
+  border-left: 3px solid var(--color-ink);
+}
+
+.about-move-art__desk-leg--left {
+  left: 22px;
+}
+
+.about-move-art__desk-leg--right {
+  right: 22px;
+}
+
+/* Editorial annotations */
+
+.about-move-art__note {
+  position: absolute;
+  z-index: 5;
+
+  max-width: max-content;
+  padding: 6px 9px;
+
+  color: var(--color-ink);
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 9px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+}
+
+.about-move-art__note--start {
+  top: 43px;
+  left: 2%;
+
+  background: var(--color-paper-pink);
+
+  transform: rotate(-4deg);
+}
+
+.about-move-art__note--end {
+  right: 3%;
+  bottom: 20px;
+
+  background: var(--color-yellow);
+
+  transform: rotate(2deg);
+}
+
+.about-move-art__scribble {
+  position: absolute;
+  top: 48%;
+  left: 43%;
+  z-index: 4;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transform: rotate(-8deg);
+}
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.about-story {
+  padding-block: clamp(82px, 7vw, 112px);
+
+  border-top: 3px dashed
+    color-mix(in oklab, var(--color-ink) 35%, transparent);
+}
+
+.about-story__grid {
+  margin-top: 26px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(360px, 0.8fr);
+  align-items: start;
+  gap: clamp(48px, 8vw, 128px);
+}
+
+.about-story h2,
+.about-definition h2,
+.about-beliefs > h2,
+.about-impact h2,
+.about-karachi h2 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(46px, 4.3vw, 76px);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.about-story__copy {
+  min-width: 0;
+  max-width: 650px;
+
+  font-size: clamp(16px, 1.2vw, 18px);
+  font-weight: 650;
+  line-height: 1.7;
+}
+
+.about-story__copy p {
+  margin: 0;
+}
+
+.about-story__copy p + p {
+  margin-top: 20px;
+}
+
+/* Movement */
+
+.about-movement {
+  width: 100%;
+  margin-top: clamp(58px, 5vw, 82px);
+
+  display: grid;
+  grid-template-columns:
+    minmax(190px, 1fr)
+    minmax(100px, 0.55fr)
+    minmax(190px, 1fr)
+    minmax(100px, 0.55fr)
+    minmax(190px, 1fr);
+  align-items: center;
+}
+
+.about-movement__stop {
+  position: relative;
+
+  min-width: 0;
+  min-height: 190px;
+  padding: 28px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-card);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-ink);
+
+  text-align: center;
+}
+
+.about-movement__stop--middle {
+  background: var(--color-paper-pink);
+
+  transform: rotate(-2deg);
+}
+
+.about-movement__stop > span {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+
+  color: var(--color-orange);
+
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-movement__stop svg {
+  width: 44px;
+  height: 44px;
+
+  flex: 0 0 auto;
+
+  color: var(--color-primary);
+}
+
+.about-movement__stop strong {
+  margin-top: 18px;
+
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.5vw, 23px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.about-movement__line {
+  min-width: 0;
+
+  border-top: 3px dashed var(--color-ink);
+
+  text-align: center;
+}
+
+.about-movement__line span {
+  position: relative;
+  top: -11px;
+
+  padding: 2px 8px;
+
+  background: var(--color-background);
+
+  font-size: 9px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DEFINITION
+   ========================================================= */
+
+.about-definition {
+  padding-block: clamp(82px, 7vw, 112px);
+
+  background: var(--color-paper-purple);
+
+  border-block: 3px solid var(--color-ink);
+}
+
+.about-definition h2 {
+  max-width: 900px;
+  margin: 22px 0 clamp(42px, 4vw, 58px);
+}
+
+.about-definition__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(26px, 2.5vw, 40px);
+}
+
+.about-board {
+  min-width: 0;
+  padding: clamp(28px, 2.5vw, 38px);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+
+.about-board--is {
+  background: var(--color-paper-green);
+
+  transform: rotate(-0.5deg);
+}
+
+.about-board--isnt {
+  background: var(--color-paper-pink);
+
+  transform: rotate(0.5deg);
+}
+
+.about-board__stamp {
+  display: inline-block;
+  max-width: 100%;
+  padding: 7px 11px;
+
+  background: var(--color-ink);
+  color: var(--color-background);
+
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+
+  transform: rotate(-2deg);
+}
+
+.about-board ul {
+  margin: 34px 0 0;
+  padding: 0;
+
+  display: grid;
+  gap: 26px;
+
+  list-style: none;
+}
+
+.about-board li {
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.about-board li > svg {
+  width: 28px;
+  height: 28px;
+
+  color: var(--color-primary);
+}
+
+.about-board li span {
+  min-width: 0;
+
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.about-board li strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+/* =========================================================
+   BELIEFS
+   ========================================================= */
+
+.about-beliefs {
+  padding-block: clamp(90px, 7.5vw, 124px);
+}
+
+.about-beliefs > h2 {
+  margin: 20px 0 clamp(42px, 4vw, 58px);
+}
+
+.about-beliefs__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 2.2vw, 34px);
+}
+
+.about-beliefs article {
+  position: relative;
+
+  min-width: 0;
+  min-height: 310px;
+  padding: clamp(28px, 2.3vw, 36px);
+
+  background: var(--color-card);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+
+.about-beliefs article:nth-child(2) {
+  background: var(--color-paper-green);
+
+  transform: translateY(22px);
+}
+
+.about-beliefs article:nth-child(3) {
+  background: var(--color-paper-pink);
+
+  transform: translateY(-8px);
+}
+
+.about-beliefs article > span {
+  position: absolute;
+  top: 19px;
+  right: 20px;
+
+  color: var(--color-orange);
+
+  font-family: var(--font-display);
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-beliefs article > svg {
+  width: 43px;
+  height: 43px;
+
+  color: var(--color-primary);
+}
+
+.about-beliefs h3 {
+  max-width: 330px;
+  margin: 54px 0 14px;
+
+  font-family: var(--font-display);
+  font-size: clamp(24px, 1.9vw, 30px);
+  font-weight: 800;
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.about-beliefs p {
+  max-width: 390px;
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   IMPACT
+   ========================================================= */
+
+.about-impact {
+  padding-block:
+    clamp(72px, 5.5vw, 92px)
+    clamp(92px, 7vw, 122px);
+}
+
+.about-impact__heading {
+  margin-bottom: clamp(36px, 3.5vw, 50px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 48px;
+}
+
+.about-impact h2 {
+  margin-top: 18px;
+}
+
+.about-impact__heading > p {
+  max-width: 340px;
+  margin: 0 0 4px;
+
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.about-impact__stats {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-ink);
+}
+
+.about-impact__stats > div {
+  min-width: 0;
+  min-height: 170px;
+  padding: 30px clamp(24px, 2.2vw, 36px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-impact__stats > div + div {
+  border-left: 2px solid var(--color-ink);
+}
+
+.about-impact__stats strong {
+  font-family: var(--font-display);
+  font-size: clamp(50px, 4vw, 66px);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.about-impact__stats span {
+  margin-top: 10px;
+
+  font-size: 11px;
+  font-weight: 1000;
+  line-height: 1.35;
+  letter-spacing: 0.14em;
+}
+
+/* =========================================================
+   KARACHI
+   ========================================================= */
+
+.about-karachi {
+  margin-bottom: clamp(90px, 7vw, 122px);
+  padding:
+    clamp(52px, 4.5vw, 72px)
+    clamp(42px, 5.5vw, 88px);
+
+  display: grid;
+  grid-template-columns:
+    minmax(420px, 0.9fr)
+    minmax(0, 1fr);
+  gap: clamp(48px, 7vw, 110px);
+  align-items: center;
+
+  background: var(--color-yellow);
+
+  border: 4px solid var(--color-ink);
+  box-shadow: 9px 9px 0 var(--color-ink);
+}
+
+.about-karachi > div:last-child {
+  min-width: 0;
+}
+
+/* Map */
+
+.about-karachi__map {
+  position: relative;
+
+  width: min(100%, 610px);
+  min-width: 0;
+
+  justify-self: center;
+
+  padding: 16px;
+
+  background: var(--color-background);
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 8px 8px 0 var(--color-ink);
+
+  transform: rotate(-1deg);
+}
+
+.about-karachi__map svg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+.karachi-map__sea {
+  fill: var(--color-paper-purple);
+
+  stroke: var(--color-ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.karachi-map__balochistan {
+  fill: var(--color-paper-pink);
+
+  stroke: var(--color-ink);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.karachi-map__sindh {
+  fill: var(--color-paper-green);
+
+  stroke: var(--color-ink);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.karachi-map__boundary {
+  fill: none;
+
+  stroke: var(--color-ink);
+  stroke-width: 3;
+  stroke-dasharray: 9 7;
+}
+
+.karachi-map__coast {
+  fill: none;
+
+  stroke: var(--color-ink);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.karachi-map__region-label {
+  fill: color-mix(
+    in oklab,
+    var(--color-ink) 72%,
+    transparent
+  );
+
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 1000;
+  letter-spacing: 0.13em;
+}
+
+.karachi-map__region-label--sindh {
+  font-size: 17px;
+}
+
+.karachi-map__locator-line {
+  fill: none;
+
+  stroke: var(--color-primary);
+  stroke-width: 3;
+  stroke-dasharray: 7 6;
+}
+
+.karachi-map__marker-outer {
+  fill: var(--color-orange);
+
+  stroke: var(--color-ink);
+  stroke-width: 4;
+}
+
+.karachi-map__marker-inner {
+  fill: var(--color-primary);
+
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+
+.karachi-map__label-box {
+  fill: var(--color-yellow);
+
+  stroke: var(--color-ink);
+  stroke-width: 3;
+}
+
+.karachi-map__karachi-label {
+  fill: var(--color-ink);
+
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.karachi-map__waves {
+  fill: none;
+
+  stroke: var(--color-primary);
+  stroke-width: 3;
+  stroke-linecap: round;
+
+  opacity: 0.65;
+}
+
+.karachi-map__sea-label {
+  fill: var(--color-primary);
+
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: 0.18em;
+}
+
+.about-karachi__map-note {
+  position: absolute;
+  top: -18px;
+  left: 24px;
+
+  padding: 7px 11px;
+
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+
+  border: 2px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+
+  font-size: 10px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.15em;
+
+  white-space: nowrap;
+
+  transform: rotate(-3deg);
+}
+
+.about-karachi__map-note i {
+  position: absolute;
+  right: -14px;
+  bottom: -11px;
+
+  width: 27px;
+  height: 17px;
+
+  border-right: 3px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+
+  transform: rotate(22deg);
+}
+
+.about-karachi h2 {
+  margin: 18px 0 24px;
+}
+
+.about-karachi p {
+  max-width: 680px;
+  margin: 0;
+
+  font-size: clamp(15px, 1.1vw, 17px);
+  font-weight: 700;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.about-cta {
+  padding:
+    clamp(44px, 4vw, 60px)
+    clamp(32px, 5vw, 78px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+
+  background: var(--color-orange);
+
+  border: 4px solid var(--color-ink);
+  box-shadow: 10px 10px 0 var(--color-ink);
+
+  transform: rotate(-0.3deg);
+}
+
+.about-cta > div:first-child {
+  min-width: 0;
+}
+
+.about-cta__sticker {
+  display: inline-block;
+  max-width: 100%;
+  padding: 6px 11px;
+
+  background: var(--color-yellow);
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 11px;
+  font-weight: 1000;
+  line-height: 1.25;
+  letter-spacing: 0.12em;
+
+  transform: rotate(-2deg);
+}
+
+.about-cta h2 {
+  margin: 20px 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(42px, 4.2vw, 70px);
+  font-weight: 800;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+
+  text-transform: uppercase;
+}
+
+.about-cta__actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+}
+
+.about-cta__primary,
+.about-cta__secondary {
+  min-width: 200px;
+  min-height: 52px;
+  padding: 10px 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 14px;
+  font-weight: 1000;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.about-cta__primary {
+  background: var(--color-ink);
+  color: var(--color-background);
+
+  box-shadow: 5px 5px 0 var(--color-background);
+}
+
+.about-cta__primary svg {
+  width: 18px;
+  height: 18px;
+
+  flex: 0 0 auto;
+}
+
+.about-cta__secondary {
+  background: var(--color-background);
+  color: var(--color-ink);
+
+  box-shadow: 4px 4px 0 var(--color-ink);
+}
+
+/* =========================================================
+   LAPTOP / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 1180px) {
+  .about-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(380px, 0.85fr);
+
+    gap: 48px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(58px, 7vw, 88px);
+  }
+
+  .about-move-art {
+    transform: scale(0.92);
+    transform-origin: center;
+  }
+
+  .about-story__grid {
+    gap: 60px;
+  }
+
+  .about-movement {
+    grid-template-columns:
+      minmax(170px, 1fr)
+      minmax(70px, 0.4fr)
+      minmax(170px, 1fr)
+      minmax(70px, 0.4fr)
+      minmax(170px, 1fr);
+  }
+
+  .about-karachi {
+    grid-template-columns:
+      minmax(380px, 0.9fr)
+      minmax(0, 1fr);
+
+    gap: 50px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .about-hero {
+    min-height: 0;
+
+    grid-template-columns: 1fr;
+    gap: 58px;
+  }
+
+  .about-hero__copy {
+    max-width: 760px;
+  }
+
+  .about-hero__art {
+    width: min(680px, 100%);
+    min-height: 450px;
+    margin-inline: auto;
+  }
+
+  .about-move-art {
+    width: min(100%, 680px);
+    height: 450px;
+
+    transform: none;
+  }
+
+  .about-story__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-story__copy {
+    max-width: 720px;
+  }
+
+  .about-movement {
+    width: min(620px, 100%);
+    margin-inline: auto;
+    margin-top: 60px;
+
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .about-movement__stop {
+    width: 100%;
+  }
+
+  .about-movement__stop--middle {
+    transform: none;
+  }
+
+  .about-movement__line {
+    width: 0;
+    height: 52px;
+    margin-inline: auto;
+
+    border-top: 0;
+    border-left: 3px dashed var(--color-ink);
+  }
+
+  .about-movement__line span {
+    display: none;
+  }
+
+  .about-definition__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-board {
+    width: 100%;
+  }
+
+  .about-board--is,
+  .about-board--isnt {
+    transform: none;
+  }
+
+  .about-beliefs__grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .about-beliefs article {
+    min-height: 0;
+  }
+
+  .about-beliefs article:nth-child(n) {
+    transform: none;
+  }
+
+  .about-beliefs h3 {
+    max-width: 520px;
+  }
+
+  .about-beliefs p {
+    max-width: 650px;
+  }
+
+  .about-impact__heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .about-impact__heading > p {
+    max-width: 620px;
+  }
+
+  .about-karachi {
+    padding: 52px 42px;
+
+    grid-template-columns: 1fr;
+    gap: 58px;
+  }
+
+  .about-karachi__map {
+    width: min(100%, 620px);
+
+    justify-self: start;
+  }
+
+  .about-karachi > div:last-child {
+    max-width: 720px;
+  }
+
+  .about-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 36px;
+
+    transform: none;
+  }
+
+  .about-cta__actions {
+    width: min(100%, 320px);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .about-label {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+  }
+
+  .about-hero {
+    padding-block: 54px 72px;
+    gap: 42px;
+  }
+
+  .about-hero h1 {
+    margin-top: 20px;
+
+    font-size: clamp(48px, 15vw, 68px);
+    line-height: 0.89;
+  }
+
+  .about-hero h1 em::after {
+    bottom: 5px;
+
+    border-bottom-width: 6px;
+  }
+
+  .about-hero__copy > p {
+    font-size: 16px;
+  }
+
+  /* Mobile hero art */
+
+  .about-hero__art {
+    width: 100%;
+    min-height: 350px;
+  }
+
+  .about-move-art {
+    width: 100%;
+    height: 350px;
+  }
+
+  .about-move-art__book {
+    top: 52px;
+    left: 2%;
+
+    width: 125px;
+    padding: 17px 13px;
+
+    border-width: 2px;
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+
+  .about-move-art__book strong {
+    font-size: 24px;
+  }
+
+  .about-move-art__book small {
+    font-size: 6px;
+  }
+
+  .about-move-art__book > span {
+    padding: 3px 5px;
+
+    border-width: 2px;
+
+    font-size: 6px;
+  }
+
+  .about-move-art__path {
+    top: 10px;
+
+    height: 280px;
+  }
+
+  .about-move-art__route,
+  .about-move-art__arrow {
+    stroke-width: 5;
+  }
+
+  .about-move-art__motion {
+    stroke-width: 5;
+  }
+
+  .about-move-art__desk {
+    right: 1%;
+    bottom: 40px;
+
+    width: 155px;
+    height: 125px;
+  }
+
+  .about-move-art__received-book {
+    right: 37px;
+    bottom: 42px;
+
+    width: 70px;
+    height: 98px;
+
+    border-width: 2px;
+    box-shadow: 4px 4px 0 var(--color-ink);
+  }
+
+  .about-move-art__received-book span {
+    font-size: 13px;
+  }
+
+  .about-move-art__desk-top {
+    bottom: 36px;
+
+    height: 13px;
+
+    border-width: 2px;
+  }
+
+  .about-move-art__desk-leg {
+    width: 9px;
+    height: 38px;
+
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    border-left-width: 2px;
+  }
+
+  .about-move-art__desk-leg--left {
+    left: 15px;
+  }
+
+  .about-move-art__desk-leg--right {
+    right: 15px;
+  }
+
+  .about-move-art__desk-label {
+    top: -23px;
+
+    padding: 4px 6px;
+
+    font-size: 6px;
+  }
+
+  .about-move-art__note {
+    padding: 4px 6px;
+
+    border-width: 2px;
+
+    font-size: 6px;
+  }
+
+  .about-move-art__note--start {
+    top: 25px;
+    left: 0;
+  }
+
+  .about-move-art__note--end {
+    right: 0;
+    bottom: 5px;
+  }
+
+  .about-move-art__scribble {
+    top: 47%;
+    left: 38%;
+
+    font-size: 13px;
+  }
+
+  /* Remaining sections */
+
+  .about-story,
+  .about-beliefs {
+    padding-block: 76px;
+  }
+
+  .about-story h2,
+  .about-definition h2,
+  .about-beliefs > h2,
+  .about-impact h2,
+  .about-karachi h2 {
+    font-size: clamp(39px, 12vw, 54px);
+  }
+
+  .about-story__copy {
+    font-size: 16px;
+  }
+
+  .about-movement {
+    margin-top: 46px;
+  }
+
+  .about-movement__stop {
+    min-height: 160px;
+    padding: 24px 20px;
+  }
+
+  .about-definition {
+    padding-block: 76px;
+  }
+
+  .about-definition h2 {
+    margin-bottom: 38px;
+  }
+
+  .about-board {
+    padding: 26px 22px;
+
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+
+  .about-board ul {
+    gap: 24px;
+  }
+
+  .about-board li {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 13px;
+  }
+
+  .about-board li > svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .about-board li strong {
+    font-size: 19px;
+  }
+
+  .about-beliefs article {
+    padding: 27px 23px;
+
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+
+  .about-beliefs h3 {
+    margin-top: 48px;
+
+    font-size: 25px;
+  }
+
+  .about-impact {
+    padding-block: 70px 88px;
+  }
+
+  .about-impact__stats {
+    grid-template-columns: 1fr;
+
+    box-shadow: 6px 6px 0 var(--color-ink);
+  }
+
+  .about-impact__stats > div {
+    min-height: 120px;
+    padding: 24px;
+  }
+
+  .about-impact__stats > div + div {
+    border-top: 2px solid var(--color-ink);
+    border-left: 0;
+  }
+
+  .about-impact__stats strong {
+    font-size: 50px;
+  }
+
+  .about-karachi {
+    margin-bottom: 86px;
+    padding: 44px 22px;
+
+    gap: 46px;
+
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--color-ink);
+  }
+
+  .about-karachi__map {
+    width: 100%;
+    padding: 8px;
+
+    box-shadow: 5px 5px 0 var(--color-ink);
+
+    transform: none;
+  }
+
+  .about-karachi__map-note {
+    top: -15px;
+    left: 12px;
+
+    padding: 6px 9px;
+
+    font-size: 8px;
+  }
+
+  .karachi-map__region-label {
+    font-size: 12px;
+  }
+
+  .karachi-map__region-label--sindh {
+    font-size: 15px;
+  }
+
+  .about-karachi p {
+    font-size: 15px;
+  }
+
+  .about-cta {
+    padding: 38px 22px;
+
+    gap: 32px;
+
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--color-ink);
+  }
+
+  .about-cta h2 {
+    font-size: clamp(38px, 12vw, 52px);
+  }
+
+  .about-cta__actions,
+  .about-cta__primary,
+  .about-cta__secondary {
+    width: 100%;
+  }
+
+  .about-cta__primary,
+  .about-cta__secondary {
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   NARROW MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .about-hero h1 {
+    font-size: 45px;
+  }
+
+  .about-hero__art {
+    min-height: 320px;
+  }
+
+  .about-move-art {
+    height: 320px;
+  }
+
+  .about-move-art__book {
+    top: 48px;
+
+    width: 112px;
+  }
+
+  .about-move-art__book strong {
+    font-size: 21px;
+  }
+
+  .about-move-art__desk {
+    bottom: 36px;
+
+    width: 142px;
+  }
+
+  .about-move-art__received-book {
+    right: 34px;
+
+    width: 64px;
+    height: 91px;
+  }
+
+  .about-move-art__scribble {
+    left: 35%;
+
+    font-size: 11px;
+  }
+
+  .about-karachi {
+    padding-inline: 18px;
+  }
+
+  .about-board {
+    padding-inline: 19px;
+  }
+}

@@ -1,0 +1,99 @@
+.generated-cover {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 3 / 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 16px;
+
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0 var(--color-ink);
+
+  color: var(--color-ink);
+  overflow: hidden;
+}
+
+.generated-cover::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+
+  border-left: 2px dashed
+    color-mix(in oklab, var(--color-ink) 35%, transparent);
+}
+
+.generated-cover strong {
+  position: relative;
+  z-index: 1;
+
+  padding-left: 8px;
+
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 800;
+  line-height: 1;
+
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.generated-cover__icon {
+  width: 42%;
+  height: auto;
+
+  align-self: center;
+  stroke-width: 1.8;
+}
+
+.generated-cover__level {
+  position: relative;
+  z-index: 1;
+
+  align-self: flex-end;
+
+  padding: 3px 8px;
+
+  background: var(--color-background);
+  color: var(--color-ink);
+
+  border: 2px solid var(--color-ink);
+
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.2;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.generated-cover--violet {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.generated-cover--orange {
+  background: var(--color-orange);
+}
+
+.generated-cover--yellow {
+  background: var(--color-yellow);
+}
+
+.generated-cover--green {
+  background: var(--color-paper-green);
+}
+
+.generated-cover--pink {
+  background: var(--color-paper-pink);
+}
+
+.generated-cover--purple-paper {
+  background: var(--color-paper-purple);
+}

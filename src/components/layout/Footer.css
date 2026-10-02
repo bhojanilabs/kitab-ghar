@@ -1,0 +1,482 @@
+/* =========================================================
+   KITAB GHAR — FOOTER
+   ========================================================= */
+
+.footer {
+  position: relative;
+  width: 100%;
+  margin-top: clamp(96px, 8vw, 132px);
+  overflow: hidden;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-top: 4px solid var(--color-ink);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    color-mix(in oklab, var(--color-primary-foreground) 10%, transparent) 1px,
+    transparent 0
+  );
+  background-size: 22px 22px;
+  opacity: 0.35;
+}
+
+.footer-inner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--content-width), calc(100% - (var(--page-gutter) * 2)));
+  margin-inline: auto;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.footer-intro {
+  min-height: 240px;
+  padding-block: 58px 54px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(48px, 6vw, 96px);
+}
+
+.footer-intro__copy {
+  min-width: 0;
+}
+
+.footer-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--color-yellow);
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-intro h2 {
+  max-width: 880px;
+  margin: 0;
+  color: var(--color-primary-foreground);
+  font-family: var(--font-display);
+  font-size: clamp(38px, 3.5vw, 56px);
+  font-weight: 800;
+  line-height: 0.97;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.footer-cta {
+  min-width: 190px;
+  min-height: 52px;
+  padding: 10px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--color-yellow);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  box-shadow: 5px 5px 0 var(--color-ink);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-transform: uppercase;
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+
+.footer-cta svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+}
+
+.footer-cta:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+
+.footer-cta:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+/* =========================================================
+   SECTION DIVIDER
+   ========================================================= */
+
+.footer-divider {
+  width: 100%;
+  border-top: 2px dashed color-mix(in oklab, var(--color-primary-foreground) 42%, transparent);
+}
+
+/* =========================================================
+   DIRECTORY
+   ========================================================= */
+
+.footer-directory {
+  padding-block: 54px 58px;
+  display: grid;
+  grid-template-columns: minmax(340px, 1.8fr) repeat(3, minmax(150px, 1fr));
+  align-items: start;
+  gap: clamp(38px, 4vw, 72px);
+}
+
+.footer-brand {
+  min-width: 0;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-primary-foreground);
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.footer-brand-books {
+  width: 34px;
+  height: 27px;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  flex: 0 0 auto;
+  transform: rotate(-4deg);
+}
+
+.footer-brand-books i {
+  display: block;
+  width: 34px;
+  height: 6px;
+  background: var(--color-orange);
+  border: 2px solid var(--color-ink);
+}
+
+.footer-brand-books i:nth-child(2) {
+  width: 28px;
+  margin-left: 5px;
+  background: var(--color-yellow);
+}
+
+.footer-brand-books i:nth-child(3) {
+  width: 31px;
+  background: var(--color-paper-pink);
+}
+
+.footer-brand p {
+  width: 100%;
+  max-width: 430px;
+  margin: 21px 0;
+  color: color-mix(in oklab, var(--color-primary-foreground) 82%, transparent);
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.65;
+}
+
+.footer-location {
+  display: inline-block;
+  padding-bottom: 5px;
+  color: var(--color-yellow);
+  border-bottom: 2px solid var(--color-orange);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-column h3 {
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 0;
+  color: var(--color-yellow);
+  font-size: 12px;
+  font-weight: 1000;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer-links a,
+.footer-links span {
+  color: var(--color-primary-foreground);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.footer-links a {
+  transition: color 120ms ease, transform 120ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-yellow);
+  transform: translateX(3px);
+}
+
+.footer-links span {
+  opacity: 0.68;
+}
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.footer-ending {
+  border-top: 1px solid color-mix(in oklab, var(--color-primary-foreground) 22%, transparent);
+}
+
+.footer-bottom {
+  min-height: 72px;
+  padding-block: 22px 26px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  color: color-mix(in oklab, var(--color-primary-foreground) 76%, transparent);
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-bottom-message {
+  color: var(--color-yellow);
+  text-align: center;
+}
+
+.footer-bottom > :last-child {
+  text-align: right;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 621px) and (max-width: 900px) {
+  .footer-intro {
+    min-height: 0;
+    padding-block: 52px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-intro h2 {
+    max-width: 760px;
+  }
+
+  .footer-cta {
+    width: max-content;
+  }
+
+  .footer-directory {
+    padding-block: 50px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 46px 30px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand p {
+    max-width: 560px;
+  }
+
+  .footer-bottom {
+    min-height: 78px;
+    padding-block: 20px 24px;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 18px;
+    font-size: 10px;
+  }
+
+  .footer-bottom-message {
+    text-align: center;
+  }
+
+  .footer-bottom > :first-child {
+    text-align: left;
+  }
+
+  .footer-bottom > :last-child {
+    text-align: right;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+  .footer {
+    margin-top: 88px;
+  }
+
+  .footer-inner {
+    width: calc(100% - 32px);
+  }
+
+  .footer-intro {
+    padding-block: 46px 44px;
+    display: block;
+  }
+
+  .footer-eyebrow {
+    margin-bottom: 15px;
+    font-size: 11px;
+  }
+
+  .footer-intro h2 {
+    width: 100%;
+    max-width: none;
+    font-size: clamp(31px, 8.8vw, 39px);
+    line-height: 0.97;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+  }
+
+  .footer-cta {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    margin-top: 28px;
+    font-size: 12px;
+  }
+
+  .footer-directory {
+    padding-block: 42px 40px;
+    display: block;
+  }
+
+  .footer-brand {
+    width: 100%;
+    padding-bottom: 32px;
+  }
+
+  .footer-logo {
+    font-size: 24px;
+  }
+
+  .footer-brand p {
+    width: 100%;
+    max-width: none;
+    margin: 19px 0 20px;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .footer-location {
+    font-size: 11px;
+  }
+
+  .footer-column {
+    width: 100%;
+    padding-block: 18px;
+  }
+
+  .footer-column h3 {
+    margin: 0 0 12px;
+    font-size: 10px;
+  }
+
+  .footer-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 0;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .footer-links > * + *::before {
+    content: "•";
+    margin-inline: 14px;
+    color: var(--color-orange);
+    font-size: 10px;
+  }
+
+  .footer-bottom {
+    min-height: 0;
+    padding-block: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    font-size: 9px;
+    text-align: center;
+  }
+
+  .footer-bottom-message {
+    order: -1;
+  }
+
+  .footer-bottom > :first-child,
+  .footer-bottom-message,
+  .footer-bottom > :last-child {
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   NARROW MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .footer-inner {
+    width: calc(100% - 28px);
+  }
+
+  .footer-intro h2 {
+    font-size: clamp(29px, 8.8vw, 34px);
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+  }
+
+  .footer-links a,
+  .footer-links span {
+    font-size: 13px;
+  }
+
+  .footer-links > * + *::before {
+    margin-inline: 11px;
+  }
+
+  .footer-bottom {
+    font-size: 8px;
+  }
+}
