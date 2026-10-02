@@ -1,0 +1,351 @@
+.account-page {
+  width: min(820px, calc(100% - (var(--page-gutter) * 2)));
+  margin: 0 auto;
+  padding: clamp(48px, 7vw, 85px) 0 90px;
+}
+
+.account-heading > span {
+  display: inline-block;
+  padding: 6px 9px;
+  background: var(--color-yellow);
+  border: 2px solid var(--color-ink);
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.14em;
+}
+
+.account-heading h1 {
+  margin: 17px 0 5px;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 7vw, 58px);
+  line-height: 1;
+}
+
+.account-heading p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.account-profile {
+  margin-top: 35px;
+  padding: clamp(20px, 4vw, 30px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+  box-shadow: 7px 7px 0 var(--color-ink);
+}
+
+.account-profile__icon {
+  width: 70px;
+  height: 70px;
+  flex: 0 0 70px;
+  display: grid;
+  place-items: center;
+  background: var(--color-paper-purple);
+  border: 2px solid var(--color-ink);
+}
+
+.account-profile__icon svg {
+  width: 31px;
+  height: 31px;
+  stroke-width: 2.4;
+}
+
+.account-profile__identity {
+  min-width: 0;
+}
+
+.account-profile__identity > span {
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.13em;
+}
+
+.account-profile__identity h2 {
+  margin: 2px 0 7px;
+  font-family: var(--font-display);
+  font-size: clamp(25px, 5vw, 34px);
+  line-height: 1;
+}
+
+.account-profile__email {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.account-profile__email svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+
+.account-placeholder {
+  margin-top: 28px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  background: var(--color-paper-green);
+  border: 2px dashed var(--color-ink);
+}
+
+.account-placeholder > svg {
+  width: 25px;
+  height: 25px;
+  flex: 0 0 auto;
+}
+
+.account-placeholder strong {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.account-placeholder p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.account-signout {
+  margin-top: 30px;
+  min-height: 46px;
+  padding: 10px 17px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-paper-pink);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+.account-signout:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 var(--color-ink);
+}
+
+.account-signout:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.account-signout svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+}
+
+@media (max-width: 560px) {
+  .account-page {
+    width: calc(100% - 30px);
+    padding-top: 38px;
+  }
+
+  .account-profile {
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+
+  .account-profile__icon {
+    width: 52px;
+    height: 52px;
+    flex-basis: 52px;
+  }
+
+  .account-profile__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .account-placeholder {
+    padding: 17px;
+  }
+
+  .account-signout {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+.account-settings {
+  margin-top: 30px;
+  padding: clamp(20px, 4vw, 30px);
+  background: var(--color-card);
+  border: 2px solid var(--color-ink);
+}
+
+.account-section-heading {
+  margin-bottom: 20px;
+}
+
+.account-section-heading > span {
+  font-size: 9px;
+  font-weight: 1000;
+  letter-spacing: 0.13em;
+}
+
+.account-section-heading h2 {
+  margin: 3px 0 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+}
+
+.account-method {
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 2px dashed var(--color-ink);
+}
+
+.account-method > div {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.account-method strong {
+  font-size: 13px;
+}
+
+.account-method > div > span {
+  font-size: 11px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.account-method__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+
+.account-method__status svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 3;
+}
+
+.account-connect,
+.account-password button {
+  min-height: 40px;
+  padding: 8px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  background: var(--color-yellow);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-ink);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+.account-connect svg {
+  width: 14px;
+  height: 14px;
+}
+
+.account-password {
+  padding-top: 20px;
+  display: grid;
+  gap: 11px;
+  border-top: 2px dashed var(--color-ink);
+}
+
+.account-password__heading {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.account-password__heading > svg {
+  width: 22px;
+  height: 22px;
+}
+
+.account-password__heading div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-password__heading strong {
+  font-size: 13px;
+}
+
+.account-password__heading span {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.account-password input {
+  width: 100%;
+  min-height: 45px;
+  padding: 10px 12px;
+  background: var(--color-background);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.account-password input:focus {
+  box-shadow: 3px 3px 0 var(--color-primary);
+}
+
+.account-password button {
+  width: fit-content;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+}
+
+.account-connect:disabled,
+.account-password button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (max-width: 560px) {
+  .account-settings {
+    padding: 18px;
+  }
+
+  .account-method {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 11px;
+  }
+
+  .account-connect,
+  .account-password button {
+    width: 100%;
+  }
+}

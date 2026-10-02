@@ -9,6 +9,7 @@ import {
   X,
 } from "lucide-react";
 import { ROUTES } from "../../config/routes";
+import { useAuth } from "../../features/auth/useAuth";
 import "./Header.css";
 
 const navigation = [
@@ -23,8 +24,23 @@ const navigation = [
   { number: "04", label: "Browse", to: ROUTES.browse, tone: "yellow" },
 ];
 
-export default function Header({ user = null }) {
+function getUserDisplayName(user) {
+  if (!user) return null;
+
+  return (
+    user.user_metadata?.display_name ||
+    user.user_metadata?.full_name ||
+    user.user_metadata?.name ||
+    user.email?.split("@")[0] ||
+    "Account"
+  );
+}
+
+export default function Header() {
+  const { user } = useAuth();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const displayName = getUserDisplayName(user);
 
   function closeMobileMenu() {
     setMobileOpen(false);
@@ -82,15 +98,21 @@ export default function Header({ user = null }) {
               user ? "identity-ticket--account" : "identity-ticket--guest"
             }`}
             to={user ? ROUTES.account : ROUTES.auth}
-            aria-label={user ? "Open your Kitab Ghar account" : "Log in or sign up"}
+            aria-label={
+              user ? "Open your Kitab Ghar account" : "Log in or sign up"
+            }
           >
             <span className="identity-ticket__stub">
-              {user ? <UserRound aria-hidden="true" /> : <LogIn aria-hidden="true" />}
+              {user ? (
+                <UserRound aria-hidden="true" />
+              ) : (
+                <LogIn aria-hidden="true" />
+              )}
             </span>
 
             <span className="identity-ticket__copy">
               <small>{user ? "MY KITAB GHAR" : "YOUR SHELF"}</small>
-              <strong>{user ? user.name || "Account" : "Sign In"}</strong>
+              <strong>{user ? displayName : "Sign In"}</strong>
             </span>
 
             <span className="identity-ticket__notches" aria-hidden="true" />
@@ -104,7 +126,11 @@ export default function Header({ user = null }) {
             aria-controls="mobile-navigation"
             aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
           >
-            {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+            {mobileOpen ? (
+              <X aria-hidden="true" />
+            ) : (
+              <Menu aria-hidden="true" />
+            )}
           </button>
         </div>
 
@@ -144,7 +170,7 @@ export default function Header({ user = null }) {
                   <UserRound aria-hidden="true" />
                   <span>
                     <small>MY KITAB GHAR</small>
-                    <strong>{user.name || "Account"}</strong>
+                    <strong>{displayName}</strong>
                   </span>
                 </>
               ) : (

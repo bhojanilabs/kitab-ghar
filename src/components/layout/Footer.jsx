@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../config/routes";
 import "./Footer.css";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export default function Footer() {
   return (
     <footer className="footer">
@@ -65,7 +67,7 @@ export default function Footer() {
 
         <section className="footer-ending">
           <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Kitab Ghar</span>
+            <span>© {CURRENT_YEAR} Kitab Ghar</span>
             <span className="footer-bottom-message">Built to keep books moving.</span>
             <span>Karachi, Pakistan</span>
           </div>

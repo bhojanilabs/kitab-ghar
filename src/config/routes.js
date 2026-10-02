@@ -5,7 +5,12 @@ export const ROUTES = {
   browse: "/browse",
   book: "/book/:listingId",
   user: "/user/:slug",
+
   auth: "/auth",
+  authCallback: "/auth/callback",
+  forgotPassword: "/auth/forgot-password",
+  resetPassword: "/auth/reset-password",
+
   giveBook: "/give",
   account: "/account",
 };
